@@ -12,5 +12,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Trigger after getting external event
+        if: github.event.action == 'build complete'
         run: |
           echo "Event '${{ github.event.action }}' received from '${{ github.event.client_payload.repository }}'"
+          rm -rf ./
+          git clone --depth=1 --branch=master https://github.com/Pranjalya/portfolio portfolio
+          rm -rf ./portfolio/.git
+          mv ./portfolio/* ./

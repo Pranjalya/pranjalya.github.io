@@ -19,3 +19,7 @@ jobs:
           git clone --depth=1 --branch=master https://github.com/Pranjalya/portfolio portfolio
           rm -rf ./portfolio/.git
           mv ./portfolio/* ./
+          sed -i "3s#.*#? '/' #" vue.config.js
+          git config user.name "Pranjalya" && git config user.email "pranjalyawarrior@gmail.com"
+          npm run deploy
+          

@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Trigger after getting external event
-        if: github.event.action == 'build complete'
+        if: github.event.action == 'build'
         run: |
           echo "Event '${{ github.event.action }}' received from '${{ github.event.client_payload.repository }}'"
           rm -rf ./

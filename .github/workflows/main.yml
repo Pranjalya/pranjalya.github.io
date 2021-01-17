@@ -25,7 +25,7 @@ jobs:
         run: |
           echo "Event '${{ github.event.action }}' received from '${{ github.event.client_payload.repository }}'"
           git config user.name "Pranjalya" && git config user.email "pranjalyawarrior@gmail.com"
-          rm -rf ./portfolio
+          rm -rf ./*
           git clone --depth=1 --branch=master https://github.com/Pranjalya/portfolio
           rm -rf ./portfolio/.git
           mv ./portfolio/* ./

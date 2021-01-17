@@ -32,5 +32,7 @@ jobs:
           sed -i "3s#.*#? '/' #" vue.config.js
           git add .
           git commit -m "portfolio updated :wrench:"
-          git push origin main
-          npm run deploy
+          git push origin master
+          
+      - name: Deploy to gh-page
+        run: npm run deploy

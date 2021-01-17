@@ -11,12 +11,19 @@ jobs:
   ping-pong:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
+        
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+  
       - name: Trigger after getting external event
         if: github.event.action == 'build'
         run: |
           echo "Event '${{ github.event.action }}' received from '${{ github.event.client_payload.repository }}'"
-          git clone --depth=1 --branch=master https://github.com/Pranjalya/portfolio portfolio
           git config user.name "Pranjalya" && git config user.email "pranjalyawarrior@gmail.com"
+          git clone --depth=1 --branch=master https://github.com/Pranjalya/portfolio
           rm -rf ./portfolio/.git
           mv ./portfolio/* ./
           sed -i "3s#.*#? '/' #" vue.config.js

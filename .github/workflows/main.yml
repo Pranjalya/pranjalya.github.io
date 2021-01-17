@@ -17,9 +17,11 @@ jobs:
           echo "Event '${{ github.event.action }}' received from '${{ github.event.client_payload.repository }}'"
           rm -rf ./
           git clone --depth=1 --branch=master https://github.com/Pranjalya/portfolio portfolio
+          git config user.name "Pranjalya" && git config user.email "pranjalyawarrior@gmail.com"
           rm -rf ./portfolio/.git
           mv ./portfolio/* ./
           sed -i "3s#.*#? '/' #" vue.config.js
-          git config user.name "Pranjalya" && git config user.email "pranjalyawarrior@gmail.com"
+          git add .
+          git commit -m "portfolio updated :wrench:"
+          git push origin main
           npm run deploy
-          

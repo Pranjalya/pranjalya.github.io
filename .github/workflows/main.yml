@@ -27,6 +27,7 @@ jobs:
           git clone --depth=1 --branch=master https://github.com/Pranjalya/portfolio
           rm -rf ./portfolio/.git
           mv ./portfolio/* ./
+          ls
           sed -i "3s#.*#? '/' #" vue.config.js
           git add .
           git commit -m "portfolio updated :wrench:"

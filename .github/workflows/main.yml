@@ -26,7 +26,7 @@ jobs:
           rm -rf ./*
           git clone --depth=1 --branch=master https://github.com/Pranjalya/portfolio
           rm -rf ./portfolio/.git ./portfolio/.github
-          mv ./portfolio/.* ./
+          mv ./portfolio/* ./
           mv ./portfolio/.[!.]* ./
           sed -i "3s#.*#? '/' #" vue.config.js
           git add .

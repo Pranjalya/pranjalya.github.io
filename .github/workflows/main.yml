@@ -28,21 +28,6 @@ jobs:
           rm -rf ./portfolio/.git ./portfolio/.github
           mv ./portfolio/.* ./
           mv ./portfolio/.[!.]* ./
-          ls
-          sed -i "3s#.*#? '/' #" vue.config.js
-          git add .
-          git commit -m "portfolio updated :wrench:"
-          git push origin master
-          
-      - name: Deploy to gh-page
-        run: |
-          git config user.name "Pranjalya" && git config user.email "pranjalyawarrior@gmail.com"
-          rm -rf ./*
-          git clone --depth=1 --branch=master https://github.com/Pranjalya/portfolio
-          rm -rf ./portfolio/.git ./portfolio/.github
-          mv ./portfolio/* ./
-          mv ./portfolio/.[!.]* ./
-          ls
           sed -i "3s#.*#? '/' #" vue.config.js
           git add .
           git commit -m "portfolio updated :wrench:"

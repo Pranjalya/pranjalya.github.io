@@ -25,7 +25,7 @@ jobs:
           git config user.name "Pranjalya" && git config user.email "pranjalyawarrior@gmail.com"
           rm -rf ./*
           git clone --depth=1 --branch=master https://github.com/Pranjalya/portfolio
-          rm -rf ./portfolio/.git
+          rm -rf ./portfolio/.git ./portfolio/.github
           mv ./portfolio/.* ./
           mv ./portfolio/.[!.]* ./
           ls
@@ -39,7 +39,7 @@ jobs:
           git config user.name "Pranjalya" && git config user.email "pranjalyawarrior@gmail.com"
           rm -rf ./*
           git clone --depth=1 --branch=master https://github.com/Pranjalya/portfolio
-          rm -rf ./portfolio/.git
+          rm -rf ./portfolio/.git ./portfolio/.github
           mv ./portfolio/* ./
           mv ./portfolio/.[!.]* ./
           ls

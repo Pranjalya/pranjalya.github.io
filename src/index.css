@@ -2,34 +2,109 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    background-color: #06080d;
+    color: #f1f5f9;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+
+  ::selection {
+    background-color: rgba(56, 189, 248, 0.25);
+    color: #e0f2fe;
+  }
+}
+
+/* Custom modern scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #06080d;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Cosmic grid background pattern */
+.bg-cosmic-grid {
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.bg-radial-nebula {
+  background: radial-gradient(circle at 50% 0%, rgba(56, 189, 248, 0.12) 0%, rgba(168, 85, 247, 0.05) 45%, transparent 70%);
+}
+
+/* Glassmorphism panel styles */
+.glass-panel {
+  background: rgba(14, 20, 34, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glass-panel-hover:hover {
+  background: rgba(18, 26, 44, 0.8);
+  border-color: rgba(56, 189, 248, 0.25);
+  box-shadow: 0 10px 30px -10px rgba(56, 189, 248, 0.15);
+}
+
+/* Glowing text gradients */
+.text-gradient-cyan {
+  background: linear-gradient(135deg, #ffffff 0%, #38bdf8 50%, #818cf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-aurora {
+  background: linear-gradient(135deg, #38bdf8 0%, #a855f7 50%, #ec4899 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Timeline Layout */
 .timeline-container {
-    width: 100%;
-    padding-left: 80px;
-    padding-right: 0;
+  width: 100%;
+  padding-left: 80px;
+  padding-right: 0;
 }
 
 .timeline-pointer {
-    display: none;
+  display: none;
 }
 
 @media (min-width: 768px) {
-    .timeline-container {
-        width: 50%;
-        padding-left: 0;
-        padding-right: 0;
-    }
+  .timeline-container {
+    width: 50%;
+    padding-left: 0;
+    padding-right: 0;
+  }
 
-    .timeline-container.left {
-        margin-left: 0;
-        margin-right: auto;
-        padding-right: 40px;
-        text-align: right;
-    }
+  .timeline-container.left {
+    margin-left: 0;
+    margin-right: auto;
+    padding-right: 40px;
+    text-align: right;
+  }
 
-    .timeline-container.right {
-        margin-left: auto;
-        margin-right: 0;
-        padding-left: 40px;
-        text-align: left;
-    }
+  .timeline-container.right {
+    margin-left: auto;
+    margin-right: 0;
+    padding-left: 40px;
+    text-align: left;
+  }
 }

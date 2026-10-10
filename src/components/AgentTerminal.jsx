@@ -5,7 +5,8 @@ import { FaTerminal, FaPlay, FaCircle, FaCopy, FaCheck } from 'react-icons/fa';
 const AgentTerminal = () => {
   const [inputVal, setInputVal] = useState('');
   const [copied, setCopied] = useState(false);
-  const terminalEndRef = useRef(null);
+  const terminalBodyRef = useRef(null);
+  const isInitialMount = useRef(true);
 
   const commandDatabase = {
     'help': `Available commands:
@@ -111,7 +112,13 @@ Type a command below or click a suggested prompt to inspect Pranjalya's systems 
   };
 
   useEffect(() => {
-    terminalEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    if (isInitialMount.current) {
+      isInitialMount.current = false;
+      return;
+    }
+    if (terminalBodyRef.current) {
+      terminalBodyRef.current.scrollTop = terminalBodyRef.current.scrollHeight;
+    }
   }, [history]);
 
   return (
@@ -177,7 +184,10 @@ Type a command below or click a suggested prompt to inspect Pranjalya's systems 
             </div>
 
             {/* Terminal Body */}
-            <div className="p-5 sm:p-6 bg-[#04060a]/90 text-slate-200 min-h-[380px] max-h-[480px] overflow-y-auto space-y-5">
+            <div 
+              ref={terminalBodyRef}
+              className="p-5 sm:p-6 bg-[#04060a]/90 text-slate-200 min-h-[380px] max-h-[480px] overflow-y-auto space-y-5"
+            >
               {history.map((item, idx) => (
                 <div key={idx} className="space-y-1.5">
                   <div className="flex items-center gap-2 text-cyan-400 font-semibold">
@@ -189,7 +199,6 @@ Type a command below or click a suggested prompt to inspect Pranjalya's systems 
                   </pre>
                 </div>
               ))}
-              <div ref={terminalEndRef} />
             </div>
 
             {/* Input Form */}

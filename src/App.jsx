@@ -11,6 +11,13 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 function App() {
+  React.useEffect(() => {
+    // If user loaded the page without a hash anchor, ensure it starts at the top
+    if (!window.location.hash) {
+      window.scrollTo(0, 0);
+    }
+  }, []);
+
   return (
     <div className="bg-[#06080d] text-slate-100 min-h-screen font-sans selection:bg-cyan-500/30 selection:text-cyan-200 relative">
       {/* Interactive Starlight / Orbital Canvas Background */}

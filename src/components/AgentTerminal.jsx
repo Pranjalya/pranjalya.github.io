@@ -29,7 +29,8 @@ Key Innovations:
 
     'cat astrachaos': `[SYSTEM SPEC: ASTRACHAOS-3D INVERSE PHYSICS ENGINE]
 ────────────────────────────────────────────────────────────────
-GitHub: https://github.com/Pranjalya/AstraChaos-3D
+Live Simulation: https://pranjalya.github.io/AstraChaos-3D
+GitHub Repo:     https://github.com/Pranjalya/AstraChaos-3D
 Core Pillars:
   • Inverse Physics Engine: Vectorized Differential Evolution optimizer over an 18-dimensional state space (R^18) to reverse-engineer initial conditions from natural language.
   • Agentic Copilot: Python FastAPI service connecting NVIDIA Nemotron with Model Context Protocol (MCP) tools with zero-downtime fallback loops.

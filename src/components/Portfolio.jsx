@@ -21,7 +21,7 @@ const Portfolio = () => {
       category: "flagship",
       tech: ["Rust", "WebAssembly", "NVIDIA Nemotron", "MCP", "FastAPI", "Three.js", "Recharts"],
       github: "https://github.com/Pranjalya/AstraChaos-3D",
-      demo: "https://github.com/Pranjalya/AstraChaos-3D",
+      demo: "https://pranjalya.github.io/AstraChaos-3D",
       metrics: "120 FPS Zero-Alloc · 18D State Space · MCP Tools"
     },
     {
@@ -34,7 +34,7 @@ const Portfolio = () => {
       category: "systems",
       tech: ["Python", "WebGL", "WASM", "Qdrant", "Vector Search", "Knowledge Graphs"],
       github: "https://github.com/Pranjalya/mythos-atlas",
-      demo: "https://github.com/Pranjalya/mythos-atlas",
+      demo: "https://mythos-atlas.pages.dev/",
       metrics: "3D Globe · Vector Search · Knowledge Graph"
     },
     {
@@ -236,24 +236,25 @@ const Portfolio = () => {
                 </div>
 
                 {/* Action Buttons */}
-                <div className="flex items-center gap-4 pt-4 border-t border-white/10">
+                <div className="flex flex-wrap items-center gap-3 pt-4 border-t border-white/10">
                   <a
-                    href={flagshipProject.github}
+                    href={flagshipProject.demo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-space-950 font-bold text-sm shadow-glow-cyan transition-all"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-bold text-sm shadow-glow-cyan transition-all transform hover:-translate-y-0.5"
                   >
-                    <FaGithub className="text-base" />
-                    <span>View Repository</span>
+                    <FaRocket className="text-xs" />
+                    <span>Launch Live Simulation</span>
+                    <FaExternalLinkAlt className="text-[10px] ml-1 opacity-80" />
                   </a>
                   <a
                     href={flagshipProject.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-sm font-medium text-slate-300 hover:text-cyan-300 transition-colors"
+                    className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 text-slate-200 hover:text-white border border-white/10 text-sm font-medium transition-all"
                   >
-                    <span>Architecture Docs</span>
-                    <FaExternalLinkAlt className="text-xs" />
+                    <FaGithub className="text-base" />
+                    <span>Repository</span>
                   </a>
                 </div>
               </div>
